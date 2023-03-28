@@ -6,8 +6,9 @@ from django.shortcuts import render
 
 
 def mi_vista(request):
-    print('PASE POR ACA!!!!!')
-    return HttpResponse('<h1>Mi primera vista</h1>')
+    # print('PASE POR ACA!!!!!')
+    # return HttpResponse('<h1>Mi primera vista</h1>')
+    return render(request, 'inicio/index.html')
 
 # version con HttpResponse
 # def mostrar_fecha(request):
