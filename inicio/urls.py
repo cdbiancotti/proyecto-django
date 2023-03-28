@@ -1,6 +1,7 @@
-
 from django.urls import path
 from inicio import views
+
+app_name = 'inicio'
 
 urlpatterns = [
     path('', views.mi_vista),
@@ -9,4 +10,5 @@ urlpatterns = [
     path('mi-primer-template/', views.mi_primer_template),
     path('prueba-template/', views.prueba_template),
     path('crear-animal/', views.crear_animal),
+    path('prueba-render/', views.prueba_render),
 ]
