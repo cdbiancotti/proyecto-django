@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar Fecha</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    {% if edad > 20 %}
-    <p>{{nombre}} {{apellido}}</p>
-    {% elif edad > 15 %}
-    <p style="color: green">{{nombre}} {{apellido}}</p>
-    {% else %}
-    <p style="color: red">{{nombre}} {{apellido}}</p>
-    {% endif %}
+{% block title_head %}
+<title>Prueba template</title>
+{% endblock title_head %}
 
-    {% for anio in anios %}
-    <h3><li>valor del listado numero {{forloop.counter}} es: {{anio}}</li></h3>
-    {% endfor %} 
+{% block contenido %}
+{% if edad > 20 %}
+<p>{{nombre}} {{apellido}}</p>
+{% elif edad > 15 %}
+<p style="color: green">{{nombre}} {{apellido}}</p>
+{% else %}
+<p style="color: red">{{nombre}} {{apellido}}</p>
+{% endif %}
 
-</body>
-</html>
+{% for anio in anios %}
+<h3><li>valor del listado numero {{forloop.counter}} es: {{anio}}</li></h3>
+{% endfor %} 
+{% endblock contenido %}
