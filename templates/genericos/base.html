@@ -22,13 +22,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href={% url 'inicio' %}>Inicio</a>
-                <a class="navbar-brand" href={% url 'mostrar_fecha' %}>Mostrar Fecha</a>
+                <a class="navbar-brand" href={% url 'inicio:inicio' %}>Inicio</a>
+                <a class="navbar-brand" href={% url 'inicio:mostrar_fecha' %}>Mostrar Fecha</a>
                 <a class="navbar-brand" href="www.google.com">Google</a>
-                <a class="navbar-brand" href={% url 'mi_primer_template' %}>Mi Primer Template</a>
-                <a class="navbar-brand" href={% url 'prueba_template' %}>Prueba Template</a>
-                <a class="navbar-brand" href={% url 'crear_animal' %}>Crear Animal</a>
-                <a class="navbar-brand" href={% url 'prueba_render' %}>Prueba Render</a>
+                <a class="navbar-brand" href={% url 'inicio:mi_primer_template' %}>Mi Primer Template</a>
+                <a class="navbar-brand" href={% url 'inicio:prueba_template' %}>Prueba Template</a>
+                <a class="navbar-brand" href={% url 'inicio:crear_animal' %}>Crear Animal</a>
+                <a class="navbar-brand" href={% url 'inicio:prueba_render' %}>Prueba Render</a>
                 {% comment %} <a class="btn btn-primary" href="#signup">Sign Up</a> {% endcomment %}
             </div>
         </nav>
