@@ -1,0 +1,20 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+<title>Modiciar Animal</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Modiciar Animal</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+<form action={% url 'inicio:modificar_animal' id_animal %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Modificar</button>
+</form>
+{% endblock contenido %}

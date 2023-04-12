@@ -12,14 +12,8 @@
 {% block contenido %}
 
 <a class="navbar-brand" href={% url 'inicio:crear_animal' %}>Crear Animal</a>
-<p>
-    <form action={% url 'inicio:listar_animales' %}>
-        {{formulario}}
-        <button>Buscar</button>
-    </form>
-</p>
-{% if animales %}
-    {% for animal in animales %}
+{% if object_list %}
+    {% for animal in object_list %}
     <li>
         <a class="navbar-brand" href={% url 'inicio:mostrar_animal' animal.id %}>{{animal}}</a>
         <button>
