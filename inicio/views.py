@@ -4,6 +4,7 @@ from django.template import Template, Context, loader
 from inicio.models import Animal
 from django.shortcuts import render, redirect
 from inicio.forms import CreacionAnimalFormulario, BuscarAnimal, ModificarAnimalFormulario
+from django.urls import reverse_lazy
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -169,19 +170,19 @@ class ListaAnimales(ListView):
 class CrearAnimal(CreateView):
     model = Animal
     template_name = 'inicio/CBV/crear_animal_v3.html'
-    success_url = '/inicio/animales/'
+    success_url = reverse_lazy('inicio:listar_animales')
     fields = ['nombre', 'edad']
     
 class ModificarAnimal(LoginRequiredMixin, UpdateView):
     model = Animal
     template_name = 'inicio/CBV/modificar_animal.html'
-    success_url = '/inicio/animales/'
+    success_url = reverse_lazy('inicio:listar_animales')
     fields = ['nombre', 'edad', 'cant_dientes']
     
 class EliminarAnimal(LoginRequiredMixin, DeleteView):
     model = Animal
     template_name = 'inicio/CBV/eliminar_animal.html'
-    success_url = '/inicio/animales/'
+    success_url = reverse_lazy('inicio:listar_animales')
     
 class MostrarAnimal(DetailView):
     model = Animal

@@ -30,10 +30,16 @@
                 <a class="navbar-brand" href={% url 'inicio:prueba_render' %}>Prueba Render</a>
                 <a class="navbar-brand" href={% url 'inicio:listar_animales' %}>Animales</a>
                 {% comment %} <a class="navbar-brand" href={% url 'inicio:prueba_render' %}>Prueba Render</a> {% endcomment %}
-                <a class="btn btn-primary" href={% url 'usuarios:login' %}>Inicio sesion</a>
-                <a href="#">{{request.user.username}}</a>
-                <a class="btn btn-primary" href={% url 'usuarios:registro' %}>Registrarse</a>
+                {% if request.user.is_authenticated %}
+                {% if request.user.informacionextra.avatar %}
+                <img src={{request.user.informacionextra.avatar.url}} alt="" height="40px">
+                {% endif %}
+                <a href={% url 'usuarios:editar_perfil' %}>{{request.user.username}}</a>
                 <a class="btn btn-primary" href={% url 'usuarios:logout' %}>Cerrar sesion</a>
+                {% else %}
+                <a class="btn btn-primary" href={% url 'usuarios:login' %}>Inicio sesion</a>
+                <a class="btn btn-primary" href={% url 'usuarios:registro' %}>Registrarse</a>
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->
